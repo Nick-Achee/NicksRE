@@ -1,17 +1,20 @@
 {
   "compilerOptions": {
-    "composite": true
+    "target": "es2016",
+    "lib": ["dom", "esnext"],
+    "allowJs": false,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "experimentalDecorators": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve"
   },
-  "files": [],
-  "include": [],
-  "references": [
-    { "path": "./packages/notion-types/tsconfig.json" },
-    { "path": "./packages/notion-types/tsconfig.cjs.json" },
-    { "path": "./packages/notion-utils/tsconfig.json" },
-    { "path": "./packages/notion-utils/tsconfig.cjs.json" },
-    { "path": "./packages/notion-client/tsconfig.json" },
-    { "path": "./packages/notion-client/tsconfig.cjs.json" },
-    { "path": "./packages/react-notion-x/tsconfig.json" },
-    { "path": "./packages/react-notion-x/tsconfig.cjs.json" }
-  ]
+  "exclude": ["node_modules"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
 }
