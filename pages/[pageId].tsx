@@ -4,8 +4,6 @@ import Head from 'next/head'
 import { getPageTitle, getAllPagesInSpace } from 'notion-utils'
 import { NotionAPI } from 'notion-client'
 import { Collection, CollectionRow, NotionRenderer } from 'react-notion-x'
-import Nav from '../components/Nav'
-import MainNav from '../components/MainNav'
 
 const isDev = process.env.NODE_ENV === 'development' || !process.env.NODE_ENV
 
@@ -70,7 +68,7 @@ export default function NotionPage({ recordMap }) {
         <title>{title}</title>
       </Head>
 
-<div className=""><MainNav />
+<div className="">
       <NotionRenderer
         recordMap={recordMap}
         fullPage={true}
