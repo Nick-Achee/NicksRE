@@ -4,6 +4,8 @@ import Head from 'next/head'
 import { getPageTitle, getAllPagesInSpace } from 'notion-utils'
 import { NotionAPI } from 'notion-client'
 import { Collection, CollectionRow, NotionRenderer } from 'react-notion-x'
+import Nav from '../components/Nav'
+import MainNav from '../components/MainNav'
 
 const isDev = process.env.NODE_ENV === 'development' || !process.env.NODE_ENV
 
@@ -29,7 +31,7 @@ export async function getStaticPaths() {
     }
   }
 
-  const rootNotionPageId = '962ae98ef6a94701a0cdaae2ad0a0732'
+  const rootNotionPageId = 'bcf3c19d64414c0787ae7a5cd0676447'
   const rootNotionSpaceId = 'fde5ac74-eea3-4527-8f00-4482710e1af3'
 
   // This crawls all public pages starting from the given root page in order
@@ -68,6 +70,7 @@ export default function NotionPage({ recordMap }) {
         <title>{title}</title>
       </Head>
 
+<div className=""><MainNav />
       <NotionRenderer
         recordMap={recordMap}
         fullPage={true}
@@ -77,7 +80,7 @@ export default function NotionPage({ recordMap }) {
           collection: Collection,
           collectionRow: CollectionRow
         }}
-      />
+      /></div>
     </>
   )
 }
